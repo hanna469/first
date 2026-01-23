@@ -105,3 +105,38 @@
 * web > 16x16 | 32x32 | 96x96
 * apple > 57x57 | 180x180
 * android > 192x192
+## 비디오(video)태그 - 블록(block)
+### 로컬 환경에 동영상 파일이 있는 경우 연결방법
+* `<video></video>`
+* `<video src="상대경로"></video>`
+### 동영상 관련 속성
+* `<video src="상대주소" autoplay muted loop controls></vidoe>`
+* 자동재생 : autoplay | 음소거 : muted | 반복재생 : loop | 재생바 : controls
+### 유튜브 영상
+* 원하는 영상 재생 > 우클릭(소스코드복사)
+### 유튜브 영상 속성
+* `<iframe src="http://www.youtube.com/embed/동영상이름">`
+* `<iframe src="http://www.youtube.com/embed/동영상이름?속성=값&속성=값">`
+<!-- 예) `<iframe src="http://www.~embed/wEThWSF31?autoplay=1&mute=1&loop=1&playlist=wEThWSF31">` -->
+### 유튜브 영상 속성 종류
+* `autoplay=1` : 재생함 | 재생안함(0)
+* `mute=1` : 음소거함 | 음소거안함(0)
+* `loop=1` : 반복재생함 | 반복재생안함(0)
+* `playlist=동영상이름` : loop=1일 경우 함께 사용
+* `controls=0` : 재생바숨김 , 재생바보임(1)>이 경우 굳이 안 써도 됨
+## 목록태그 + 레이아웃
+* 2개 이상의 목록(li)를 묶어주는 그룹 태그(ol,ul)
+### 비순차 ul + li
+* 목록li에 순서가 없는 경우(비순차) : ul 그룹 태그 사용 | `<ul><li></li></ul>`
+* ul의 자식은 li만 올 수 있다. 자손은 모두 가능
+### 순차 ol + li
+* 목록li에 순서가 있는 경우 : ol 그룹 태그 사용 | `<ol><li></li></ol>`
+## 비순차목록
+* `dl` 그룹 | `dt` 제목 | `dd` 내용
+* `dt-dd` 는 h4~h6 정도로 구성된 제목과 내용이 연속적으로 2개 이상 구성되어 있을 경우 사용한다.
+* `dl`의 자식은 `dt`, `dd`만 올 수 있음.
+* `dt-dd` 형제는 `dt-dd`만 가능함. (dd가 dt의 앞에 올 수 없음)
+*`<dl>[<dt></dt><dd></dd>][<dt></dt><dd></dd>]</dl>` (ㅇ) | `<dl><dd></dd><dt></dt>` (x)
+
+
+

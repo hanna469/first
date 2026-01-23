@@ -18,5 +18,20 @@
         <img src="./images/quick03.png" alt="">
     </div>
     <h1>video</h1>
+    <h2>동영상 확장자가 1개 일때</h2>
+    <video src="./video/cat.mp4" autoplay muted loop controls title="고양이 잠자는 영상"></video>
+    <h2>동영상 확장자가 2개 이상일때</h2>
+    <video autoplay muted loop>
+        <!-- 1번영상 : 1번이 정상 시 1번만 재생됨 -->
+        <source src="./video/coffee.mp5" type="video/mp4">
+        <!-- 2번영상 : 1번 영상 오류 시 2번만 재생됨 -->
+        <source src="./video/forest.mp4" type="video/mp4">
+    </video>
+    <h2>유튜브 영상</h2>
+    <iframe width="1455" height="671" src="https://www.youtube.com/embed/wGEzlJY7Ay8?autoplay=1&mute=1&loop=1&playlist=wGEzlJY7Ay8&controls=0" title="야 미안해.. 다신 냥빨 안할게" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h2>연습영상</h2>
+    <video src="./video/jellyfish.mp4" autoplay muted loop></video>
+    <iframe width="1396" height="785" src="https://www.youtube.com/embed/bYRNDNoxqsE?autoplay=1&mute=1&loop=1&playlist=bYRNDNoxqsE" title="송황칠복 구조기" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
 </body>
 </html>

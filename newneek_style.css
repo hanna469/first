@@ -1,0 +1,31 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 100px;
+}
+#main {
+    background: #eeeeee;
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 70px 0 50px;
+}
+.card {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    margin-bottom: 120px;
+}
+.card_img {
+    width: 45%;
+}
+.card_text {
+    width: 55%;
+}
+.card reverse {
+    flex-direction: row-reverse;
+}
+.btm_text {
+    align-items: center;
+}
