@@ -136,7 +136,73 @@
 * `dt-dd` 는 h4~h6 정도로 구성된 제목과 내용이 연속적으로 2개 이상 구성되어 있을 경우 사용한다.
 * `dl`의 자식은 `dt`, `dd`만 올 수 있음.
 * `dt-dd` 형제는 `dt-dd`만 가능함. (dd가 dt의 앞에 올 수 없음)
-*`<dl>[<dt></dt><dd></dd>][<dt></dt><dd></dd>]</dl>` (ㅇ) | `<dl><dd></dd><dt></dt>` (x)
-
-
-
+* `<dl>[<dt></dt><dd></dd>][<dt></dt><dd></dd>]</dl>` (ㅇ) | `<dl><dd></dd><dt></dt>` (x) 
+## form 폼 태그
+* 사용자로부터 입력 받을 수 있는 폼을 정의
+### `<form action="#" method="#"></form>`
+* action : 사용자가 입력 또는 선택한 정보를 전송하는 주소 | 폼 데이터를 제출할 서버 스크립트
+    * 예) 네이버 로그인 중이라면 아이디, 비밀번호를 네이버 서버(=action)로 전송해서 유효성 체크
+* method : action에 정보를 전송할 때 어떤 방식으로 전송할 것인지 결정하는 방식 **get, post**
+    * post : http 본문에 포함하여 서버 전송 | 입력정보 비공개 | 예시) 로그인 할 때 | **보안 높음**
+    * get : 폼 데이터 url 추가하여 서버 전송 | 주소창에 입력정보 공개 | 예시) 검색했을 때 | **보안 낮음**
+### form action
+* 입력정보
+* 선택정보
+* 결정버튼
+### fieldset
+* 양식의 일부를 그룹화. legend 그룹 제목 필수 포함.
+<!-- <form action="#" method="get">
+    <fieldset>
+        <legend>연습그룹</legend>
+    </fieldset>
+</form> -->
+### `<input>` 입력 및 선택양식(inline)
+* 사용자의 입력 및 선택 양식 담을 때 사용
+* 입력 및 선택 구분을 위해 type속성을 연결하여 컨트롤 양식 활용
+* `<input type="" name="" value="" id="" class="">`
+* type : 용도에 따른 종류 선택|입력 필드의 종류 (ex : 비번=password)
+* name 
+    * 입력양식(text, password 등) : 서버 전송 시 데이터 구분을 위한 개별이름(데이터 구분)
+    * 선택양식(select, checkbox, radio) : 선택 요소 2개 이상을 묶는 그룹명
+* value
+    * 입력양식 :input 요소의 처음부터 입력되어있는 초기값 (ex 수량 1)(필요할 때만 사용)
+    * 선택양식 : 데이터 구분용(name 의미동일)
+* id : css or js 데이터 구분명(name 동일설정가능)
+* class : 반복 디자인 사용 시 설정하는 반복이름
+`<input type="text" placeholder="한줄 입력"><br>`
+`<input type="password" placeholder="입력 보안"><br>`
+`<input type="tel" placeholder="전화번호"><br>`
+`<input type="url" placeholder="주소"><br>`
+`<input type="email" placeholder="이메일"><br>`
+`<input type="number" placeholder="숫자"><br>`
+`<input type="search" placeholder="검색어"><br>`
+`<input type="time"><br> <!-- 시간입력 html5 -->`
+`<input type="week"><br> <!-- 날짜입력(시간x) html5 -->`
+`<input type="hidden"><br> <!-- 서버로 전송되는 숨김영역의 값 -->`
+`<input type="checkbox"><input type="checkbox"> 선택양식<br> <!-- 다중선택 -->`
+`<input type="radio"><input type="radio"> 선택양식<br> <!-- 단일선택 -->`
+`<textarea>여러 줄 입력</textarea>`
+* label : 입력,선택 시 for="id" 연결로 선택영역 늘릴 수 있음
+* select-option : select 선택박스 > option 선택박스 값
+`<select name="(그룹명)" id="(css,js 용)"><option value="(서버 전송값)"></option></select>`
+* input 내 value = 초기값 | min = 입력 가능한 최소값 | max = 입력 가능한 최대값 입력 가능
+* `autofocus` : 페이지 접속 시 바로 커서 위치 **활성화**
+### button
+* `<a>` : 단순 페이지 이동(조건x)
+* `<button>` : 페이지 이동(조건부)
+    * 로그인 성공 -> 메인이동 | 로그인 실패 -> 이동x
+* `<button type="종류"></button>`
+* name, value 속성 사용 안 함 | 'id+class'는 필요에 따라 사용
+* button
+    * submit, reset을 제외한 모든 범용적 기능
+    * 사용자의 입력(input), 선택(select, checkbox, radio) 요소가 없는 경우 단순 버튼의 기능만 활용할 때 form 없이 버튼만 사용할 수 있음(이전, 다음, 재생, 일시정지 등)
+    * 페이지 내에서 이전/다음 이동, 재생, 일시정지, 정지 등 다양한 기능 활용
+    * 서버 전송이 아닌 조건에 따른 다른 창 띄우기(우편번호찾기, 본인인증 등)
+    * 버튼 클릭 시 타 페이지로 넘어가게 할 때: `onclick="window.location.href='페이지경로'"` 
+* submit
+    * form action, method 방식 서버에 전송하는 데이터
+    * (예) 아이디, 비번 입력 후 서버 전송해서 유효성 검사
+    * (예) 상품을 장바구니(서버)에 담기
+    * (예) 장바구니에 담은 상품을 구입해서 내 구입목록(서버)에 저장하기
+* reset
+    * 기존 데이터를 현재 페이지에서 제거, 취소할 경우
