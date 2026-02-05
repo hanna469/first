@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>폼(form)태그</h1>
+    <!-- get : 검색할 때 -->
+    <!-- post : 로그인, 회원가입할 때, 주문정보 입력할 때 -->
+    <form action="#" method="get">
+        <fieldset>
+            <legend>연습그룹</legend>
+            <dl>
+                <dt>아이디</dt>
+                <dd><input type="text" placeholder="아이디를 입력하세요." name="user_id" id="user_id" class="input_design1"></dd>
+                <dt>이름</dt>
+                <dd><input type="text" placeholder="8~12자 사이의 비밀번호를 입력해주세요." name="user_name" id="user_name" class="input_design1"></dd>
+                <dt>비밀번호</dt>
+                <dd><input type="password" name="user_pw" id="user_pw" class="input_design1"></dd>
+                <dt>주민등록번호</dt>
+                <dd>
+                    <input type="text" name="regist_first" id="regist_first"> - <input type="password" name="regist_last" id="regist_last">
+                </dd>
+                <dt>이메일</dt>
+                <dd>
+                    <input type="text" name="email_id" id="email_id">@
+                    <select name="email_address" id="eamil_address">
+                        <option vlaue="">이메일을 선택하세요.</option>
+                        <option value="naver">naver.com</option>
+                        <option value="google">google.com</option>
+                    </select>
+                </dd>
+                <dt>생일</dt>
+                <dd>
+                    <select name="birthday_month" id="birthday_month" class="birthday">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                    </select>월
+                    <select name="birthday_day" id="birthday_day" class="birthday">
+                        <option value="20">20</option>
+                        <option value="21">21<option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                    </select>일
+                </dd>
+                <dt>배송지</dt>
+                <dd>
+                    <input type="text" name="postal_code" id="postal_code">
+                    <a href="#" target="_blank">우편번호찾기</a>
+                </dd>
+                <dd><input tape="text" name="address" id="address"></dd>
+                <dt>휴대폰번호</dt>
+                <dd>
+                    <select name="phone_agency" id="phone_agency">
+                        <option value="sk">SK</option>
+                        <option value="kt">KT</option>
+                        <option value="lg u+">LG U+</option>
+                        <option value="sk_thrifty">SK 알뜰폰</option>
+                        <option value="kt_thrifty">KT 알뜰폰</option>
+                        <option value="lg u+_thrifty">LG U+ 알뜰폰</option>
+                    </select>
+                    <input type="tel" name="phone_first" id="phone_first" class="phone_number"></input> -
+                    <input type="tel" name="phone_mid" id="phone_mid" class="phone_number"></input> -
+                    <input type="tel" name="phone_last" id="phone_last" class="phone_number"></input>
+                    <button type="button" id="auth_btn">인증번호 받기</button>
+                </dd>
+                <dt>성별</dt>
+                <dd>
+                    <label for="male">남</label>
+                    <input type="radio" name="gender" value="male" id="male">
+                    <label for="female">여</label>
+                    <input type="radio" name="gender" value="female" id="female">
+                    <label for="none">공개안함</label>
+                    <input type="radio" name="gender" value="none" id="none">
+                </dd>
+                <dt>관심사(2개 이상 선택하세요)</dt>
+                <dd>
+                    <label for="sns">SNS하기</label>
+                    <input type="checkbox" name="intersest" value="sns" id="sns">
+                    <label for="book">독서하기</label>
+                    <input type="checkbox" name="intersest" value="book" id="book">
+                    <label for="movie">영화보기</label>
+                    <input type="checkbox" name="intersest" value="movie" id="movie">
+                    <label for="sports">운동하기</label>
+                    <input type="checkbox" name="intersest" value="sports" id="sports">
+                    <label for="shooping">쇼핑하기</label>
+                    <input type="checkbox" name="intersest" value="shooping" id="shooping">
+                </dd>
+            </dl>
+        </fieldset>
+    </form>
+</body>
+</html>
